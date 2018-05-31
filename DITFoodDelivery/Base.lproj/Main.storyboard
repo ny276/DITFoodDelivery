@@ -74,7 +74,7 @@
                                     <outlet property="detailImageView" destination="Blg-1b-hjt" id="Kbo-TT-69G"/>
                                     <outlet property="detailNameLable" destination="BpV-RD-CJa" id="J6S-lz-uQF"/>
                                     <outlet property="detailTypeLabel" destination="n87-zb-ufx" id="i5H-zC-MrB"/>
-                                    <segue destination="cjO-zf-8Ea" kind="push" id="UIg-cx-SkF"/>
+                                    <segue destination="cjO-zf-8Ea" kind="push" identifier="detail" id="UIg-cx-SkF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,23 +87,56 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUd-h1-RQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="120.98950524737631"/>
+            <point key="canvasLocation" x="-44" y="90"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="dTY-vw-I7g">
             <objects>
-                <viewController id="cjO-zf-8Ea" sceneMemberID="viewController">
+                <viewController id="cjO-zf-8Ea" customClass="detailViewController" customModule="DITFoodDelivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Grm-Aw-Oz0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.77139312028884888" green="0.86196738481521606" blue="0.058920435607433319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-j9-Jd4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="287"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeI-5V-NHJ">
+                                <rect key="frame" x="16" y="405" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1s4-sS-eFg">
+                                <rect key="frame" x="16" y="482" width="343" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJd-Hl-tXk">
+                                <rect key="frame" x="16" y="544" width="343" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Uyk-uP-EMn"/>
                     </view>
                     <navigationItem key="navigationItem" id="lmG-fa-BON"/>
+                    <connections>
+                        <outlet property="detailAddress" destination="1s4-sS-eFg" id="mK8-r4-Pe0"/>
+                        <outlet property="detailImageView" destination="aMG-j9-Jd4" id="Gp4-Cr-nUu"/>
+                        <outlet property="detailName" destination="LeI-5V-NHJ" id="xpN-ey-cEP"/>
+                        <outlet property="detailType" destination="sJd-Hl-tXk" id="Mnk-eR-qli"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ah0-3x-3MO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="121"/>
+            <point key="canvasLocation" x="696.79999999999995" y="89.505247376311857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eNp-DM-j9T">
@@ -121,7 +154,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwa-PU-onv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="121"/>
+            <point key="canvasLocation" x="-796" y="99"/>
         </scene>
     </scenes>
 </document>

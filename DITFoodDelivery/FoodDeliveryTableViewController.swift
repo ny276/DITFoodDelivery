@@ -54,7 +54,20 @@ class FoodDeliveryTableViewController: UITableViewController {
         cell.detailImageView.image = UIImage(named: foodStoreImage[indexPath.row])
         return cell
     }
-   
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "detail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                 let destinationController = segue.destination as! detailViewController
+                destinationController.cellName = foodStoreNames[indexPath.row]
+                destinationController.cellAddress = foodStoreAddress[indexPath.row]
+                destinationController.cellType = foodStoreType[indexPath.row]
+                destinationController.cellImage = foodStoreImage[indexPath.row]
+    }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -101,4 +114,5 @@ class FoodDeliveryTableViewController: UITableViewController {
     }
     */
 
+}
 }
