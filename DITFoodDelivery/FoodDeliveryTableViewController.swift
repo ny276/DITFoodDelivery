@@ -13,7 +13,7 @@ class FoodDeliveryTableViewController: UITableViewController {
     var foodStoreNames = ["늘해랑", "번개반점", "아딸", "왕짜장", "토마토 도시락", "홍콩반점"]
     var foodStoreImage = ["01", "02", "03", "04", "05", "06"]
     var foodStoreAddress = ["부산광역시 부산진구 양정동 418-282", "부산광역시 부산진구 양정동 418-282", "부산광역시 부산진구 양정동 418-282", "부산광역시 부산진구 양정동 418-282", "부산광역시 부산진구 양정동 418-282", "부산광역시 부산진구 양정동 418-282"]
-    var foodStoreType = ["돼지국밥", "중화요리", "분식", "도시락", "중화요리"]
+    var foodStoreType = ["돼지국밥", "중화요리", "분식", "도시락", "중화요리", "중화요리"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +45,13 @@ class FoodDeliveryTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RE", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RE", for: indexPath) as! DetailTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = foodStoreNames[indexPath.row]
-        cell.detailTextLabel?.text = foodStoreAddress[indexPath.row]
-        cell.imageView?.image = UIImage(named : foodStoreImage[indexPath.row])
+        cell.detailAddressLabel.text = foodStoreAddress[indexPath.row]
+        cell.detailNameLable.text = foodStoreNames[indexPath.row]
+        cell.detailTypeLabel.text = foodStoreType[indexPath.row]
+        cell.detailImageView.image = UIImage(named: foodStoreImage[indexPath.row])
         return cell
     }
    
